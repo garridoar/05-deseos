@@ -8,15 +8,7 @@
 
 <ion-content color="dark">
 
-  <ion-list color="dark">
-    <ion-item *ngFor="let lista of deseosService.listas"
-      detail
-      color="dark"
-      (click)="listaSeleccionada( lista )"> <!--detail agrega la flechita a la derecha-->
-      <ion-label>{{lista.titulo}}</ion-label>
-      <ion-note slot="end" color="tertiary">{{ lista.items.length }} items</ion-note>
-    </ion-item>
-  </ion-list>
+  <app-listas [terminada]="false"></app-listas>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed"> <!-- Fixed sirve para que el botón se siga viendo aunque se haga scroll -->
     <ion-fab-button color="tertiary" (click)="agregarLista()">
